@@ -1,21 +1,24 @@
 import SectionTitle from "../Common/SectionTitle";
-import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
+import SingleFeature from "./singleService";
+import serviceData from "./serviceData";
 import Link from "next/link";
+import Image from "next/image";
 
-const Features = () => {
+const Services = () => {
   return (
     <>
       <section id="features" className="pt-16 md:py-20 lg:pt-20">
         <div className="container">
-          <SectionTitle
-            title="Solutions"
-            paragraph="Take your company to new heights by investing in our reliable and efficient technology solutions."
-            center
+          <Image
+            src="/images/brands/banner.jpeg"
+            alt="logo"
+            width={140}
+            height={30}
+            className="hidden w-full dark:block mb-10"
           />
 
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-3 hover:shadow-one ">
-            {featuresData.map((feature) => (
+          <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-4 ">
+            {serviceData.map((feature) => (
               <SingleFeature key={feature.id} feature={feature} />
             ))}
           </div>
@@ -33,4 +36,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Services;
